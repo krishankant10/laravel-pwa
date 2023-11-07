@@ -24,14 +24,14 @@ Add the following to your `composer.json` file :
 
 ```json
 "require": {
-    "silviolleite/laravelpwa": "~2.0.3",
+    "krishankant/laravelpwa": "~2.0.3",
 },
 ```
 
 or execute
 
 ```bash
-composer require silviolleite/laravelpwa --prefer-dist
+composer require krishankant/laravelpwa --prefer-dist
 ```
 
 ### Publish
