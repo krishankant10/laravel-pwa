@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelPWA\Providers;
+namespace laraPWA\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -48,10 +48,10 @@ class LaravelPWAServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__.'/../Config/config.php' => config_path('laravelpwa.php'),
+            __DIR__.'/../Config/config.php' => config_path('laraPWA.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'laravelpwa'
+            __DIR__.'/../Config/config.php', 'laraPWA'
         );
     }
 
@@ -62,7 +62,7 @@ class LaravelPWAServiceProvider extends ServiceProvider
      */
     public function registerViews()
     {
-        $viewPath = base_path('resources/views/vendor/laravelpwa');
+        $viewPath = base_path('resources/views/vendor/laraPWA');
 
         $sourcePath = __DIR__.'/../resources/views';
 
@@ -71,8 +71,8 @@ class LaravelPWAServiceProvider extends ServiceProvider
         ], 'views');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
-            return $path . '/vendor/laravelpwa';
-        }, \Config::get('view.paths')), [$sourcePath]), 'laravelpwa');
+            return $path . '/vendor/laraPWA';
+        }, \Config::get('view.paths')), [$sourcePath]), 'laraPWA');
     }
 
     /**
@@ -114,8 +114,8 @@ class LaravelPWAServiceProvider extends ServiceProvider
      */
     public function registerDirective()
     {
-        Blade::directive('laravelPWA', function () {
-            return (new \LaravelPWA\Services\MetaService)->render();
+        Blade::directive('laraPWA', function () {
+            return (new \laraPWA\Services\MetaService)->render();
         });
     }
 
@@ -128,7 +128,7 @@ class LaravelPWAServiceProvider extends ServiceProvider
     public function registerCommands()
     {
         $this->commands([
-            \LaravelPWA\Console\Commands\DeployManifest::class,
+            \laraPWA\Console\Commands\DeployManifest::class,
         ]);
         
     }

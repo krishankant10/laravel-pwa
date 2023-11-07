@@ -3,9 +3,9 @@
 [![Laravel 5.x](https://img.shields.io/badge/Laravel-5.x-orange.svg)](https://laravel.com/docs/5.8)
 [![Laravel 6.x](https://img.shields.io/badge/Laravel-6.x-blue.svg)](https://laravel.com/docs/6.x)
 [![Laravel 7.x](https://img.shields.io/badge/Laravel-7.x-red.svg)](https://laravel.com)
-[![Latest Stable Version](https://poser.pugx.org/silviolleite/laravelpwa/v/stable)](https://packagist.org/packages/silviolleite/laravelpwa)
-[![Total Downloads](https://poser.pugx.org/silviolleite/laravelpwa/downloads.png)](https://packagist.org/packages/silviolleite/laravelpwa)
-[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://packagist.org/packages//silviolleite/laravelpwa)
+[![Latest Stable Version](https://poser.pugx.org/silviolleite/laraPWA/v/stable)](https://packagist.org/packages/silviolleite/laraPWA)
+[![Total Downloads](https://poser.pugx.org/silviolleite/laraPWA/downloads.png)](https://packagist.org/packages/silviolleite/laraPWA)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://packagist.org/packages//silviolleite/laraPWA)
 
 This Laravel pakage turns your project into a [progressive web app](https://developers.google.com/web/progressive-web-apps/).  Navigating to your site on an Android phone will prompt you to add the app to your home screen.
 
@@ -24,25 +24,25 @@ Add the following to your `composer.json` file :
 
 ```json
 "require": {
-    "krishankant/laravelpwa": "~2.0.3",
+    "krishankant/laraPWA": "~2.0.3",
 },
 ```
 
 or execute
 
 ```bash
-composer require krishankant/laravelpwa --prefer-dist
+composer require krishankant/laraPWA --prefer-dist
 ```
 
 ### Publish
 
 ```bash
-$ php artisan vendor:publish --provider="LaravelPWA\Providers\LaravelPWAServiceProvider"
+$ php artisan vendor:publish --provider="laraPWA\Providers\LaravelPWAServiceProvider"
 ```
 
 ### Configuration
 
-Configure your app name, description, icons and splashes  in `config/laravelpwa.php`.
+Configure your app name, description, icons and splashes  in `config/laraPWA.php`.
 
 ```php
 'manifest' => [
@@ -139,13 +139,13 @@ Obs: In the `custom` tag you can insert personalized tags to `manifest.json` lik
 ...
 ```   
 
-Include within your `<head>` the blade directive `@laravelPWA`.
+Include within your `<head>` the blade directive `@laraPWA`.
 ```html
 <html>
 <head>
     <title>My Title</title>
     ...
-    @laravelPWA
+    @laraPWA
 </head>
 <body>
     ...
@@ -288,7 +288,7 @@ To customize service worker functionality, update the `public_path/serviceworker
 
 The offline view
 =====
-By default, the offline view is implemented in `resources/views/vendor/laravelpwa/offline.blade.php`
+By default, the offline view is implemented in `resources/views/vendor/laraPWA/offline.blade.php`
 
 ```html
 @extends('layouts.app')

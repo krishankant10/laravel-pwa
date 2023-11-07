@@ -6,14 +6,14 @@
  * Time: 19:33
  */
 
-namespace LaravelPWA\Services;
+namespace laraPWA\Services;
 
 
 class MetaService
 {
     public function render()
     {
-        return "<?php \$config = (new \LaravelPWA\Services\ManifestService)->generate(); echo \$__env->make( 'laravelpwa::meta' , ['config' => \$config])->render(); ?>";
+        return "<?php \$config = (new \laraPWA\Services\ManifestService)->generate(); echo \$__env->make( 'laraPWA::meta' , ['config' => \$config])->render(); ?>";
     }
 
 }

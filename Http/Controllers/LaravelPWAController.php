@@ -1,11 +1,11 @@
 <?php
 
-namespace LaravelPWA\Http\Controllers;
+namespace laraPWA\Http\Controllers;
 
 use Exception;
 use Illuminate\Routing\Controller;
-use LaravelPWA\Services\LaucherIconService;
-use LaravelPWA\Services\ManifestService;
+use laraPWA\Services\LaucherIconService;
+use laraPWA\Services\ManifestService;
 
 class LaravelPWAController extends Controller
 {
@@ -16,6 +16,6 @@ class LaravelPWAController extends Controller
     }
 
     public function offline(){
-        return view('laravelpwa::offline');
+        return view('laraPWA::offline');
     }
 }

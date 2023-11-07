@@ -1,11 +1,11 @@
 <?php
 
-namespace LaravelPWA\Console\Commands;
+namespace laraPWA\Console\Commands;
 
 use File;
 
 use Illuminate\Console\Command;
-use LaravelPWA\Services\ManifestService;
+use laraPWA\Services\ManifestService;
 
 class DeployManifest extends Command
 {

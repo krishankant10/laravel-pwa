@@ -6,7 +6,7 @@
  * Time: 19:13
  */
 
-namespace LaravelPWA\Services;
+namespace laraPWA\Services;
 
 
 class ManifestService
@@ -14,18 +14,18 @@ class ManifestService
     public function generate()
     {
         $basicManifest =  [
-            'name' => config('laravelpwa.manifest.name'),
-            'short_name' => config('laravelpwa.manifest.short_name'),
-            'start_url' => asset(config('laravelpwa.manifest.start_url')),
-            'display' => config('laravelpwa.manifest.display'),
-            'theme_color' => config('laravelpwa.manifest.theme_color'),
-            'background_color' => config('laravelpwa.manifest.background_color'),
-            'orientation' =>  config('laravelpwa.manifest.orientation'),
-            'status_bar' =>  config('laravelpwa.manifest.status_bar'),
-            'splash' =>  config('laravelpwa.manifest.splash')
+            'name' => config('laraPWA.manifest.name'),
+            'short_name' => config('laraPWA.manifest.short_name'),
+            'start_url' => asset(config('laraPWA.manifest.start_url')),
+            'display' => config('laraPWA.manifest.display'),
+            'theme_color' => config('laraPWA.manifest.theme_color'),
+            'background_color' => config('laraPWA.manifest.background_color'),
+            'orientation' =>  config('laraPWA.manifest.orientation'),
+            'status_bar' =>  config('laraPWA.manifest.status_bar'),
+            'splash' =>  config('laraPWA.manifest.splash')
         ];
 
-        foreach (config('laravelpwa.manifest.icons') as $size => $file) {
+        foreach (config('laraPWA.manifest.icons') as $size => $file) {
             $fileInfo = pathinfo($file['path']);
             $basicManifest['icons'][] = [
                 'src' => $file['path'],
@@ -35,8 +35,8 @@ class ManifestService
             ];
         }
 
-        if (config('laravelpwa.manifest.shortcuts')) {
-            foreach (config('laravelpwa.manifest.shortcuts') as $shortcut) {
+        if (config('laraPWA.manifest.shortcuts')) {
+            foreach (config('laraPWA.manifest.shortcuts') as $shortcut) {
 
                 if (array_key_exists("icons", $shortcut)) {
                     $fileInfo = pathinfo($shortcut['icons']['src']);
@@ -63,7 +63,7 @@ class ManifestService
             }
         }
 
-        foreach (config('laravelpwa.manifest.custom') as $tag => $value) {
+        foreach (config('laraPWA.manifest.custom') as $tag => $value) {
              $basicManifest[$tag] = $value;
         }
         return $basicManifest;
